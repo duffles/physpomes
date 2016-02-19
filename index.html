@@ -10,10 +10,34 @@
 
 <body>
     <h1>poop</h1>
+    <div id="textSection"></div>
  <!--    Message: <input id='message'></input>
     <div id='button'></div> -->
 
     <script>
+
+    function readTextFile() {
+        // var allText;
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", "https://raw.githubusercontent.com/duffles/physpomes/master/index.html", true);
+        rawFile.onreadystatechange = function() {
+            if (rawFile.readyState === 4) {
+                var allText = rawFile.responseText;
+                document.getElementsByTagName("html")[0].innerHTML = allText;
+                console.log(allText);
+            }
+        }
+
+        rawFile.send();
+    }
+
+
+
+
+
+
+
+
     var ip = '10.1.10.181';
     var port = '8000';
 
