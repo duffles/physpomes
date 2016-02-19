@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tessel">
+​
+
+<head>
+    <meta charset="utf-8">
+
+</head>
+​
+
+<body>
+    <h1>poop</h1>
+ <!--    Message: <input id='message'></input>
+    <div id='button'></div> -->
+
+    <script>
+    var ip = '10.1.10.181';
+    var port = '8000';
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://' + ip + ':' + port + '/rfid', false);  
+    console.log(request);
+    // `false` makes the request synchronous
+
+    if (request.status === 200) {
+      console.log(request.responseText);
+    }
+    
+    var socket = new WebSocket("ws://" + ip + ':' + port);
+    socket.onopen = function() {
+        console.log("We've connected!");
+
+        document.getElementById('button').addEventListener('click', function() {
+            var message = document.getElementById('message').value;
+            socket.send(message);
+            console.log("Sent", message, "to", ip, "on port", port);
+        });
+    };
+    </script>
+</body>
+​
+
+</html>

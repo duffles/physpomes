@@ -1,0 +1,205 @@
+html {
+    /* sets background image to be fixed, centered, full-page, and proportional to original image */
+    background: url('https://s3.amazonaws.com/kpomes/media/detroit/detroit6.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+    /*This section adds a fading effect when new bg images are introduced.*/
+    transition-property: background;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+    transition-delay: 100ms;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: helvetica, sans-serif;
+    font-size: 18px;
+}
+#content {
+    /*Sets and centers backdrop of central pome listing*/
+    width: 45%;
+    margin: auto;
+    padding: 0 40px 60px 40px;
+    background-color: rgba(255, 255, 255, .7);
+
+    /*places audio elements behind navbar */
+    position:relative;
+    z-index:-3;
+}
+.pome {
+    /* maintains line breaks & white-space */   
+    white-space: pre-wrap;
+}
+.byline {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    padding: 0;
+    margin: 0;
+}
+h1 {
+    /*Trip titles*/
+    font-family: 'Arvo';
+    font-size: 44px;
+    font-weight: normal;
+    padding: 80px 0 0 0;
+}
+h2 {
+    /*Poem titles*/  
+    font-family: 'Arvo';
+    font-size: 28px;
+    margin: 0;
+    padding: 45px 0 0 0;
+}
+a {
+    font-family: 'Arvo';
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+audio, img {
+    width: 100%;
+
+    /*places audio elements behind navbar*/
+    position:relative;
+    z-index:-1;
+}
+
+/**************************************Pertaining to the map and splash page*/
+#splash-toggle {
+    position:absolute;
+    top:4px;
+    right:4px;
+    padding:5px;
+    border:solid;
+    border-radius:10px;
+    background-color:white;
+    cursor:pointer;
+    font-family: 'Arvo', Georgia, serif;
+    z-index:100;
+}
+#map-canvas {
+    height: 700px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    /*places title over map canvas*/
+    position: relative;
+}
+.site-title {
+    font-family: 'Arvo', Georgia, serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    color: #003F87;
+}
+#site-title-bg {
+    /*places title over map canvas*/
+    position: absolute;
+    z-index: 100;
+    height: 210px;
+    width: 800px;
+    background-color: rgba(255, 255, 255, .7);
+    left: 0px;
+    top: 100px;
+    border-radius: 0 50px 50px 0;
+}
+#site-title-pt1 {
+    font-size: 80px;
+    text-indent: 180px;
+}
+#site-title-pt2 {
+    font-size: 80px;
+    text-indent: 290px;
+}
+/**************************************Pertaining to the alt, camera-based splash page*/
+#alt-splash {
+    height:700px; /*same as #splash, so they can be swapped back and forth*/
+    background-color:rgba(0,0,0,.8);
+    display:none;
+}
+#alt-wrapper {
+    margin:auto;
+    padding:25px 5% 0 5%;
+}
+#alt-site-title {
+    padding:0;
+    margin:0;
+    text-align: center;
+    color:white;
+}
+p {
+    padding:0;
+    margin:10px 0 20px 0;
+    color:#ccc;
+    text-align:center;
+}
+.media-wrapper { 
+  /* needed for overlay */ 
+  position:relative;
+  padding:0;
+  /*margin:0 20px 0 20px;*/
+}
+#video, #canvas {
+    border-radius:40px 40px 0 0;
+    background-color:#ccc;
+}
+.overlay {
+    /* needed for overlay */
+    position:absolute;
+    bottom:0;
+    left:0;
+
+    /* just for looks */
+    font-size:18px;
+    font-family:Helvetica,sans-serif;
+    text-align: center;
+    padding:5px 0 0 0;
+    height:30px;
+    width:600px;
+    background-color:rgba(255,255,255,.8);
+}
+button {
+    height:40px;
+    width:140px;
+    background-color:#ccc;
+    border:solid 1px;
+    border-radius:10px;
+    font-size:18px;
+    font-family:'Arvo',Helvetica,sans-serif;
+    margin:15px 0 0 570px;
+    cursor:pointer;
+}
+
+/**************************************Pertaining to the navbar*/
+ul#nav {
+    /*For horizontal nav*/
+    list-style-type: none;
+    
+    width: 100%;
+    padding: 0;
+    margin: auto;
+    font-size: 18px;
+    font-family: helvetica, sans-serif;
+    text-decoration: none;
+    box-shadow: 0 2px 2px #606060;
+}
+#nav li {
+    /*For horizontal nav*/
+    float: left;
+    
+    /*Set width of navbar items to be 100% width/# of li's - left-right padding btw li's*/
+    width: calc(100%/6 - 10px);
+    padding: 5px;
+    text-align: center;
+    background-color: #FFFFFF;
+
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+}
+#nav a {
+    padding: 0;
+    text-decoration: none;
+    color: black;
+}
